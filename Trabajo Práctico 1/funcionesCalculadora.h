@@ -6,36 +6,52 @@
 
 /** \brief Muestra el menú de opciones
  *
- * \param primer operando
- * \param segundo operando
- * \param flag del primer operando
- * \param flag del segundo operando
- * \param flag de la tercera opción
- * \return devuleve la opción elegida
+ * \param num1 primer operando
+ * \param num2 segundo operando
+ * \param flag1 Flag del primer operando
+ * \param flag2 Flag del segundo operando
+ * \param flag3 Flag de la tercera opción
+ * \return la opción elegida
  *
  */
 int mostrarMenu(int num1,int num2,int flag1,int flag2,int flag3);
 
 /** \brief Muestra el submenú de la  opción 3
  *
- * \param primer operando
- * \param segundo operando
- * \param flag de la opción 3
+ * \param num1 primer operando
+ * \param num2 segundo operando
+ * \param flag Flag de la opción 3
  *
  */
 void mostrarSubmenu(int num1,int num2,int flag);//función auxiliar a mostrarMenu
 
 /** \brief muestra los resultados de las operaciones
  *
- * \param primer operando
- * \param segundo operando
+ * \param num1 primer operando
+ * \param num2 segundo operando
+ * \param suma Resultado de la suma
+ * \param resta Resultado de la resta
+ * \param division Resultado de la division
+ * \param multiplicación Resultado de la multiplicación
+ * \param factorialA Resultado del cálculo del factorial de num1
+ * \param FactorialB Resultado del cálculo del factorial de num2
  *
  */
-void mostrarResultados(int num1,int num2);
+void mostrarResultados(int num1,int num2,int suma,int resta,float division,int multiplicacion,long long int factorialA,long long int factorialB);
+
+
+
+/** \brief Pide un numero y lo retorna
+ *
+ * \param mensaje El mensaje a mostrar
+ * \return el número ingresado
+ *
+ */
+int getInt(char mensaje[]);
 
  /** \brief Muestra un mensaje y pausa la pantalla
  *
- * \param mensaje a mostrar
+ * \param mensaje Mensaje a mostrar
  *
  */
 

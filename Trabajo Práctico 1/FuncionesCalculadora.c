@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "funcionesCalculadora.h"
-#include "operaciones.h"
 
 int mostrarMenu(int num1,int num2,int flag1,int flag2,int flag3)
 {
@@ -69,38 +68,38 @@ void mostrarSubmenu(int num1,int num2,int flag)//Función auxiliar a mostrarMenú
     }
 }
 
-void mostrarResultados(int num1,int num2)//Llama a todas las funciones que realizan las operaciones
+void mostrarResultados(int num1,int num2,int suma,int resta,float division,int multiplicacion,long long int factorialA,long long int factorialB)
 {
         //SUMA
-        printf("a)El resultado de %d+%d es: %d\n",num1,num2,sumar(num1,num2));
+        printf("a)El resultado de %d+%d es: %d\n",num1,num2,suma);
         //RESTA
-        printf("b)El resultado de %d-%d es: %d\n",num1,num2,restar(num1,num2));
+        printf("b)El resultado de %d-%d es: %d\n",num1,num2,resta);
         //IF DE LA DIVISION
         if(num2==0)
         {
-            printf("c)No se puede calcular la division si B=0\n");
-        }
-        else
-        {
-            printf("c)El resultado de %d / %d es: %.2f\n",num1,num2,dividir(num1,num2));
-        }
-        //MULTIPLICACION
-        printf("d)El resultado de %d * %d es: %d\n",num1,num2,multiplicar(num1,num2));
-        //IF DEL FACTORIAL
-        if(num1>=0&&num2>=0)
-        {
-            printf("e)El factorial de %d es %lld y el factorial de %d es %lld\n\n",num1,calcularFactorial(num1),num2,calcularFactorial(num2));
-        }else if(num1>=0&&num2<0)
-        {
-            printf("e)El factorial de %d es %lld y el factorial de %d no se puede calcular\n\n",num1,calcularFactorial(num1),num2);
-        }else if(num1<0&&num2>=0)
-        {
-            printf("e)El factorial de %d no se puede calcular y el factorial de %d es %lld\n\n",num1,num2,calcularFactorial(num2));
+            printf("c)No se puede dividir por 0\n");
         }else
         {
-            printf("e)No se puede calcular el factorial de numeros negativos\n\n");
+            printf("c)El resultado de %d/%d es: %.2f\n",num1,num2,division);
         }
+        //MULTIPLICACIÓN
+        printf("d)El resultado de %d*%d es: %d\n",num1,num2,multiplicacion);
+        //FACTORIALES
+        printf("e)El resultado del factorial de %d es %lld y el resultado del factorial de %d es %lld\n\n",num1,factorialA,num2,factorialB);
+        if(factorialA==0||factorialB==0)
+        {
+            printf("***ACLARACION***\nEl factorial que dio 0 no se pudo calcular porque no se\npuede calcular el factorial de numeros negativos\n\n");
+        }
+}
 
+int getInt(char mensaje[])
+{
+    int numero;
+
+    puts(mensaje);
+    scanf("%d",&numero);
+
+    return numero;
 }
 
 void mostrarMensaje(char mensaje[])

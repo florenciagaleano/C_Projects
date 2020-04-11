@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "funcionesCalculadora.h"
+#include "operaciones.h"
 
 int main()
 {
@@ -10,6 +11,13 @@ int main()
     int flagB=0;//esta bandera se levanta al ingresar el número B
     int flagOpcion3=0;//esta bandera se levanta si se eligio la opcion 3 y A y B fueron ingresados
     int opcion;
+    int suma;
+    int resta;
+    float division;
+    int multiplicacion;
+    long long int factorialA;
+    long long int factorialB;
+
 
     do
     {
@@ -19,18 +27,23 @@ int main()
         switch(opcion)//switch de la opción elegida
         {
             case 1:
-                printf("Ingrese primer operando: ");
-                scanf("%d",&a);
+                a=getInt("Ingrese primer operando:");
                 flagA=1;
                 break;
             case 2:
-                printf("Ingrese segundo operando: ");
-                scanf("%d",&b);
+                b=getInt("Ingrese segundo operando:");
                 flagB=1;
                 break;
             case 3:
                 if(flagA&&flagB)
                 {
+                    suma=sumar(a,b);
+                    resta=restar(a,b);
+                    division=dividir(a,b);
+                    multiplicacion=multiplicar(a,b);
+                    factorialA=calcularFactorial(a);
+                    factorialB=calcularFactorial(b);
+
                     mostrarMensaje("\n\nLas operaciones ya fueron calculadas\n\n");
                     flagOpcion3=1;
                 }
@@ -43,7 +56,7 @@ int main()
             case 4:
                 if(flagOpcion3)
                 {
-                    mostrarResultados(a,b);
+                    mostrarResultados(a,b,suma,resta,division,multiplicacion,factorialA,factorialB);
                     flagA=0;
                     flagB=0;
                     flagOpcion3=0;/*reinicializo las variables si el usuario ya vio los resultados

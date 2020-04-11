@@ -21,14 +21,22 @@ int multiplicar(int a,int b)
 float dividir(int a,int b)
 {
     float division;
-    division=(float)a/b;
+    if(b==0)
+    {
+        division=0;
+    }else
+    {
+        division=(float)a/b;
+    }
     return division;
 }
-long long calcularFactorial(int numero)
+long long int calcularFactorial(int numero)
 {
-    long long factorial=0;
+    long long int factorial=0;
 
-    if(numero==0)
+    if(numero>=0)
+    {
+        if(numero==0)
     {
         factorial=1;
     }
@@ -36,6 +44,8 @@ long long calcularFactorial(int numero)
     {
         factorial=numero*calcularFactorial(numero-1);
     }
+    }
+
 
     return factorial;
 
