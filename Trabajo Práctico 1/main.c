@@ -9,20 +9,23 @@ int main()
     int flagA=0;//esta bandera se levanta al ingresar el número A
     int flagB=0;//esta bandera se levanta al ingresar el número B
     int flagOpcion3=0;//esta bandera se levanta si se eligio la opcion 3 y A y B fueron ingresados
-    char seguir='s';
+    int opcion;
 
     do
     {
         system("cls");//la pantalla va actualizando con los valores actuales cargados
+        opcion=mostrarMenu(a,b,flagA,flagB,flagOpcion3);
 
-        switch(mostrarMenu(a,b,flagA,flagB,flagOpcion3))//switch de la opción elegida
+        switch(opcion)//switch de la opción elegida
         {
             case 1:
-                getInt("Ingrese primer operando: ");
+                printf("Ingrese primer operando: ");
+                scanf("%d",&a);
                 flagA=1;
                 break;
             case 2:
-                getInt("Ingrese segundo operando: ");
+                printf("Ingrese segundo operando: ");
+                scanf("%d",&b);
                 flagB=1;
                 break;
             case 3:
@@ -54,7 +57,6 @@ int main()
 
                 break;
             case 5:
-                seguir='n';
                 break;
             default:
                 mostrarMensaje("Opcion no valida\n\n");
@@ -62,7 +64,7 @@ int main()
         }
 
     }
-    while(seguir=='s');
+    while(opcion!=5);
 
     system("cls");//si el usuario elige salir se limpia la consola
 

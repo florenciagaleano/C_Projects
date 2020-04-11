@@ -103,16 +103,6 @@ void mostrarResultados(int num1,int num2)//Llama a todas las funciones que reali
 
 }
 
-int getInt(char mensaje[])
-{
-    int numero;
-
-    puts(mensaje);
-    scanf("%d",&numero);
-
-    return numero;
-}
-
 void mostrarMensaje(char mensaje[])
 {
     puts(mensaje);

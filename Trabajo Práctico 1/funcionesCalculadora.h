@@ -33,15 +33,6 @@ void mostrarSubmenu(int num1,int num2,int flag);//función auxiliar a mostrarMenu
  */
 void mostrarResultados(int num1,int num2);
 
-/** \brief Muestra un mensaje y devuelve un número entero
- *
- * \param mensaje a mostrar
- *
- * \return el número ingresado
- */
-
- int getInt(char mensaje[]);
-
  /** \brief Muestra un mensaje y pausa la pantalla
  *
  * \param mensaje a mostrar

@@ -53,3 +53,21 @@
 	<stdlib.h>
 	"funcionesCalculadora.h"
 
+1586586689 source:c:\users\florchus\tp_laboratorio_1\trabajo práctico 1\tp_laboratorio_1\trabajo práctico 1\funcionescalculadora.c
+	<stdio.h>
+	<stdlib.h>
+	"funcionesCalculadora.h"
+	"operaciones.h"
+
+1586586715 c:\users\florchus\tp_laboratorio_1\trabajo práctico 1\tp_laboratorio_1\trabajo práctico 1\funcionescalculadora.h
+
+1586586124 c:\users\florchus\tp_laboratorio_1\trabajo práctico 1\tp_laboratorio_1\trabajo práctico 1\operaciones.h
+
+1586586124 source:c:\users\florchus\tp_laboratorio_1\trabajo práctico 1\tp_laboratorio_1\trabajo práctico 1\operaciones.c
+	"operaciones.h"
+
+1586586674 source:c:\users\florchus\tp_laboratorio_1\trabajo práctico 1\tp_laboratorio_1\trabajo práctico 1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"funcionesCalculadora.h"
+
