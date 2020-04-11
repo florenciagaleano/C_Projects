@@ -1,0 +1,37 @@
+# depslib dependency file v1.0
+1586577291 source:c:\florencia galeano\lab,programacion\tp1 calculadora falta doxyblocks\funcionescalculadora.c
+	<stdio.h>
+	<stdlib.h>
+	"funcionesCalculadora.h"
+	"operaciones.h"
+
+1586546576 c:\florencia galeano\lab,programacion\tp1 calculadora falta doxyblocks\funcionescalculadora.h
+
+1586546079 source:c:\florencia galeano\lab,programacion\tp1 calculadora falta doxyblocks\main.c
+	<stdio.h>
+	<stdlib.h>
+	"funcionesCalculadora.h"
+
+1586577226 source:c:\florencia galeano\lab,programacion\tp1 calculadora falta doxyblocks\operaciones.c
+	"operaciones.h"
+
+1586549415 c:\florencia galeano\lab,programacion\tp1 calculadora falta doxyblocks\operaciones.h
+
+1586577301 source:c:\florencia galeano\lab,programacion\trabajo práctico 1\operaciones.c
+	"operaciones.h"
+
+1586580615 c:\florencia galeano\lab,programacion\trabajo práctico 1\operaciones.h
+
+1586580501 source:c:\florencia galeano\lab,programacion\trabajo práctico 1\funcionescalculadora.c
+	<stdio.h>
+	<stdlib.h>
+	"funcionesCalculadora.h"
+	"operaciones.h"
+
+1586580043 c:\florencia galeano\lab,programacion\trabajo práctico 1\funcionescalculadora.h
+
+1586580364 source:c:\florencia galeano\lab,programacion\trabajo práctico 1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"funcionesCalculadora.h"
+
