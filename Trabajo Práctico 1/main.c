@@ -18,13 +18,11 @@ int main()
         switch(mostrarMenu(a,b,flagA,flagB,flagOpcion3))//switch de la opción elegida
         {
             case 1:
-                printf("Ingrese primer operando: ");
-                scanf("%d",&a);
+                getInt("Ingrese primer operando: ");
                 flagA=1;
                 break;
             case 2:
-                printf("Ingrese segundo operando: ");
-                scanf("%d",&b);
+                getInt("Ingrese segundo operando: ");
                 flagB=1;
                 break;
             case 3:

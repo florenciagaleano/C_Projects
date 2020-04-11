@@ -1,49 +1,49 @@
 #ifndef OPERACIONES_H_INCLUDED
 #define OPERACIONES_H_INCLUDED
 
-
-
-#endif // OPERACIONES_H_INCLUDED
-/** \brief Suma dos enteros
+/** \brief Suma dos enteros y devuelve el resultado
  *
  * \param primer operando
  * \param segundo operando
  * \return el resultado de la suma
  *
  */
-int sumar(int,int);
+int sumar(int a,int b);
 
-/** \brief Resta dos enteros
+/** \brief Resta dos enteros y devuelve el resultado
  *
  * \param primer operando
  * \param segundo operando
  * \return el resultado de las resta
  *
  */
-int restar(int,int);
+int restar(int a,int b);
 
-/** \brief Multiplica dos enteros
+/** \brief Multiplica dos enteros y devuelve el resultado
  *
  * \param primer operando
  * \param segundo operando
  * \return el resultado de la multipliación
  *
  */
-int multiplicar(int,int);
+int multiplicar(int a,int b);
 
-/** \brief División de enteros
+/** \brief Divide dos enteros y devuelve el resultado
  *
  * \param primer operando
  * \param segundo operando
  * \return el resultado de la división
  *
  */
-float dividir(int,int);
+float dividir(int a,int b);
 
-/** \brief Calcula el factorial de un número
+/** \brief Calcula el factorial de un número y lo devuelve
  *
  * \param entero del que se calculará el factorial
  * \return resultado del cálculo del factorial
  *
  */
-long long calcularFactorial(int);
+long long calcularFactorial(int numero);
+
+
+#endif // OPERACIONES_H_INCLUDED
