@@ -24,7 +24,8 @@ float dividir(int a,int b)
     if(b==0)
     {
         division=0;
-    }else
+    }
+    else
     {
         division=(float)a/b;
     }
@@ -37,13 +38,13 @@ long long int calcularFactorial(int numero)
     if(numero>=0)
     {
         if(numero==0)
-    {
-        factorial=1;
-    }
-    else
-    {
-        factorial=numero*calcularFactorial(numero-1);
-    }
+        {
+            factorial=1;
+        }
+        else
+        {
+            factorial=numero*calcularFactorial(numero-1);
+        }
     }
 
 

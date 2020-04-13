@@ -1,33 +1,33 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <conio.h>
 #include "funcionesCalculadora.h"
 #include "operaciones.h"
 
 int main()
 {
-    int a;
-    int b;
+    int a;//primer operando
+    int b;//segundo operando
     int flagA=0;//esta bandera se levanta al ingresar el número A
     int flagB=0;//esta bandera se levanta al ingresar el número B
     int flagOpcion3=0;//esta bandera se levanta si se eligio la opcion 3 y A y B fueron ingresados
-    int opcion;
     int suma;
     int resta;
     float division;
     int multiplicacion;
     long long int factorialA;
     long long int factorialB;
+    char respuesta='n';
 
 
     do
     {
-        system("cls");//la pantalla va actualizando con los valores actuales cargados
-        opcion=mostrarMenu(a,b,flagA,flagB,flagOpcion3);
+        system("cls");//la pantalla se va actualizando con los valores actuales cargados
 
-        switch(opcion)//switch de la opción elegida
+        switch(mostrarMenu(a,b,flagA,flagB,flagOpcion3))//switch de la opción elegida
         {
             case 1:
-                a=getInt("Ingrese primer operando:");
+                a=getInt("Ingresse primer operando: ");
                 flagA=1;
                 break;
             case 2:
@@ -70,14 +70,17 @@ int main()
 
                 break;
             case 5:
+                printf("Esta seguro de que desea salir? s/n\n");
+                respuesta=getche();
                 break;
             default:
                 mostrarMensaje("Opcion no valida\n\n");
+                break;
 
         }
 
     }
-    while(opcion!=5);
+    while(respuesta=='n');
 
     system("cls");//si el usuario elige salir se limpia la consola
 

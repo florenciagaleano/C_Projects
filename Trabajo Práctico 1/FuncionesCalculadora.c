@@ -8,7 +8,7 @@ int mostrarMenu(int num1,int num2,int flag1,int flag2,int flag3)
 
     printf("     <<<<< M E N U >>>>>\n\n\n");
 
-    //OPCIÓN 1. Si el usuario ya ingresó el operando "A" este se reemplazaá por el número cargado
+    //OPCIÓN 1. Si el usuario ya ingresó el operando "A" este se reemplazará por el número cargado
     if(flag1)
     {
         printf("1.Ingresar primer operando (A=%d)\n\n",num1);
@@ -18,7 +18,7 @@ int mostrarMenu(int num1,int num2,int flag1,int flag2,int flag3)
         printf("1.Ingresar primer operando (A=x)\n\n");
     }
 
-    //OPCIÓN 2. Si el usuario ya ingresó el operando "B" este se reemplazaá por el número cargado
+    //OPCIÓN 2. Si el usuario ya ingresó el operando "B" este se reemplazará por el número cargado
     if(flag2)
     {
         printf("2.Ingresar segundo operando (B=%d)\n\n",num2);
@@ -85,7 +85,7 @@ void mostrarResultados(int num1,int num2,int suma,int resta,float division,int m
         //MULTIPLICACIÓN
         printf("d)El resultado de %d*%d es: %d\n",num1,num2,multiplicacion);
         //FACTORIALES
-        printf("e)El resultado del factorial de %d es %lld y el resultado del factorial de %d es %lld\n\n",num1,factorialA,num2,factorialB);
+        printf("e)El resultado del factorial de %d es %lld y el resultado del \nfactorial de %d es %lld\n\n",num1,factorialA,num2,factorialB);
         if(factorialA==0||factorialB==0)
         {
             printf("***ACLARACION***\nEl factorial que dio 0 no se pudo calcular porque no se\npuede calcular el factorial de numeros negativos\n\n");
