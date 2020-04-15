@@ -6,18 +6,21 @@ int sumar(int a,int b)
     suma=a+b;
     return suma;
 }
+
 int restar(int a, int b)
 {
     int resta;
     resta=a-b;
     return resta;
 }
+
 int multiplicar(int a,int b)
 {
     int multiplicacion;
     multiplicacion=a*b;
     return multiplicacion;
 }
+
 float dividir(int a,int b)
 {
     float division;
@@ -31,6 +34,7 @@ float dividir(int a,int b)
     }
     return division;
 }
+
 long long int calcularFactorial(int numero)
 {
     long long int factorial=0;

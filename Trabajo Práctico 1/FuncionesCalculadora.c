@@ -25,7 +25,7 @@ int mostrarMenu(int num1,int num2,int flag1,int flag2,int flag3)
     }
     else
     {
-                printf("2.Ingresar segundo operando (B=y)\n\n");
+        printf("2.Ingresar segundo operando (B=y)\n\n");
 
     }
 
@@ -36,14 +36,12 @@ int mostrarMenu(int num1,int num2,int flag1,int flag2,int flag3)
     //OPCIÓN 4.
     printf("4.Informar resultados\n\n");
 
-
     //OPCIÓN 5.
     printf("5.Salir\n\n");
 
     printf("#########################################\n\n");
 
-    printf("Elija una opcion: ");
-    scanf("%d",&opcion);
+    opcion=getInt("Elija una opcion:");
 
     return opcion;
 }
@@ -67,11 +65,10 @@ void mostrarSubmenu(int num1,int num2,int flag)//Función auxiliar a mostrarMenú
         printf("e)Calcular el factorial (A! y B!)\n\n");
     }
 }
-
 void mostrarResultados(int num1,int num2,int suma,int resta,float division,int multiplicacion,long long int factorialA,long long int factorialB)
 {
         //SUMA
-        printf("a)El resultado de %d+%d es: %d\n",num1,num2,suma);
+        printf("\n\na)El resultado de %d+%d es: %d\n",num1,num2,suma);
         //RESTA
         printf("b)El resultado de %d-%d es: %d\n",num1,num2,resta);
         //IF DE LA DIVISION
@@ -105,7 +102,8 @@ int getInt(char mensaje[])
 void mostrarMensaje(char mensaje[])
 {
     puts(mensaje);
-    system("pause");//system("pause") le permitirá al usuario leer los errores hasta que pulse una tecla
+    system("pause");
+    //system("pause") le permitirá al usuario leer el mensaje hasta que pulse una tecla
 }
 
 

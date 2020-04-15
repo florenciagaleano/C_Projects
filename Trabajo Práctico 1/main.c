@@ -1,8 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <conio.h>
+#include <ctype.h>//agrego esta biblioteca para usar tolower()
 #include "funcionesCalculadora.h"
 #include "operaciones.h"
+
+//LO UNICO QUE FALTARIA ES VALIDAR LOS NUMEROS
 
 int main()
 {
@@ -44,7 +46,7 @@ int main()
                     factorialA=calcularFactorial(a);
                     factorialB=calcularFactorial(b);
 
-                    mostrarMensaje("\n\nLas operaciones ya fueron calculadas\n\n");
+                    mostrarMensaje("\n\n***LAS OPERACIONES YA FUERON CALCULADAS***\n\n");
                     flagOpcion3=1;
                 }
                 else
@@ -71,7 +73,9 @@ int main()
                 break;
             case 5:
                 printf("Esta seguro de que desea salir? s/n\n");
-                respuesta=getche();
+                fflush(stdin);
+                scanf("%c",&respuesta);
+                respuesta=tolower(respuesta);
                 break;
             default:
                 mostrarMensaje("Opcion no valida\n\n");
