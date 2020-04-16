@@ -8,7 +8,7 @@ int mostrarMenu(int num1,int num2,int flag1,int flag2,int flag3)
 
     printf("     <<<<< M E N U >>>>>\n\n\n");
 
-    //OPCIÓN 1. Si el usuario ya ingresó el operando "A" este se reemplazará por el número cargado
+    //OPCIÃ“N 1. Si el usuario ya ingresÃ³ el operando "A" este se reemplazarÃ¡ por el nÃºmero cargado
     if(flag1)
     {
         printf("1.Ingresar primer operando (A=%d)\n\n",num1);
@@ -18,7 +18,7 @@ int mostrarMenu(int num1,int num2,int flag1,int flag2,int flag3)
         printf("1.Ingresar primer operando (A=x)\n\n");
     }
 
-    //OPCIÓN 2. Si el usuario ya ingresó el operando "B" este se reemplazará por el número cargado
+    //OPCIÃ“N 2. Si el usuario ya ingresÃ³ el operando "B" este se reemplazarÃ¡ por el nÃºmero cargado
     if(flag2)
     {
         printf("2.Ingresar segundo operando (B=%d)\n\n",num2);
@@ -29,14 +29,14 @@ int mostrarMenu(int num1,int num2,int flag1,int flag2,int flag3)
 
     }
 
-    //OPCIÓN 3.
+    //OPCIÃ“N 3.
     printf("3.Calcular operaciones\n\n");
     mostrarSubmenu(num1,num2,flag3);
 
-    //OPCIÓN 4.
+    //OPCIÃ“N 4.
     printf("4.Informar resultados\n\n");
 
-    //OPCIÓN 5.
+    //OPCIÃ“N 5.
     printf("5.Salir\n\n");
 
     printf("#########################################\n\n");
@@ -46,9 +46,9 @@ int mostrarMenu(int num1,int num2,int flag1,int flag2,int flag3)
     return opcion;
 }
 
-void mostrarSubmenu(int num1,int num2,int flag)//Función auxiliar a mostrarMenú
+void mostrarSubmenu(int num1,int num2,int flag)//FunciÃ³n auxiliar a mostrarMenÃº
 {
-    if(flag)//los valores actuales de A y B se muestran cargados si el usuario eligió calcular las operaciones
+    if(flag)//los valores actuales de A y B se muestran cargados si el usuario eligiÃ³ calcular las operaciones
     {
         printf("a)Calcular la suma (%d + %d)\n",num1,num2);
         printf("b)Calcular la resta (%d - %d)\n",num1,num2);
@@ -79,7 +79,7 @@ void mostrarResultados(int num1,int num2,int suma,int resta,float division,int m
         {
             printf("c)El resultado de %d/%d es: %.2f\n",num1,num2,division);
         }
-        //MULTIPLICACIÓN
+        //MULTIPLICACIÃ“N
         printf("d)El resultado de %d*%d es: %d\n",num1,num2,multiplicacion);
         //FACTORIALES
         printf("e)El resultado del factorial de %d es %lld y el resultado del \nfactorial de %d es %lld\n\n",num1,factorialA,num2,factorialB);
@@ -103,7 +103,7 @@ void mostrarMensaje(char mensaje[])
 {
     puts(mensaje);
     system("pause");
-    //system("pause") le permitirá al usuario leer el mensaje hasta que pulse una tecla
+    //system("pause") le permitirÃ¡ al usuario leer el mensaje hasta que pulse una tecla
 }
 
 
