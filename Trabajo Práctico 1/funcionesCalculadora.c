@@ -10,7 +10,7 @@ int mostrarMenu(int num1,int num2,int flag1,int flag2,int flag3)
 
     printf("     <<<<< M E N U >>>>>\n\n\n");
 
-    //OPCIÓN 1. Si el usuario ya ingresó el operando "A" este se reemplazará por el número cargado
+    //OPCIÓN 1. Si el usuario ya ingresó el operando "A" este se reemplazará por el n�mero cargado
     if(flag1)
     {
         printf("1.Ingresar primer operando (A=%d)\n\n",num1);
@@ -20,7 +20,7 @@ int mostrarMenu(int num1,int num2,int flag1,int flag2,int flag3)
         printf("1.Ingresar primer operando (A=x)\n\n");
     }
 
-    //OPCIÓN 2. Si el usuario ya ingresó el operando "B" este se reemplazará por el número cargado
+    //OPCIÓN 2. Si el usuario ya ingres� el operando "B" este se reemplazar� por el n�mero cargado
     if(flag2)
     {
         printf("2.Ingresar segundo operando (B=%d)\n\n",num2);
