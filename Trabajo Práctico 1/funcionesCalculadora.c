@@ -95,7 +95,7 @@ void mostrarResultados(int num1,int num2,int suma,int resta,float division,int m
 
 int getInt(char mensaje[],char mensajeError[])
 {
-    char numero[5];
+    char numero[64];
     int numeroValidado;
 
     puts(mensaje);
