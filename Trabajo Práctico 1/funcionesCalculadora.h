@@ -16,7 +16,7 @@
  */
 int mostrarMenu(int num1,int num2,int flag1,int flag2,int flag3);
 
-/** \brief Muestra el submenú de la  opción 3
+/** \brief Muestra las operaciones que se realizarán
  *
  * \param num1 primer operando
  * \param num2 segundo operando

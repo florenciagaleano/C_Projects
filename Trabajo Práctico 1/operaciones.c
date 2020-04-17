@@ -35,9 +35,9 @@ float dividir(int a,int b)
     return division;
 }
 
-unsigned long long calcularFactorial(int numero)
+long long int calcularFactorial(int numero)
 {
-    unsigned long long factorial=0;
+    long long int factorial=0;
 
     if(numero>=0)
     {

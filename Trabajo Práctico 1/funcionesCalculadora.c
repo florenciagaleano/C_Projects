@@ -10,7 +10,7 @@ int mostrarMenu(int num1,int num2,int flag1,int flag2,int flag3)
 
     printf("     <<<<< M E N U >>>>>\n\n\n");
 
-    //OPCIÃ“N 1. Si el usuario ya ingresÃ³ el operando "A" este se reemplazarÃ¡ por el número cargado
+    //OPCIÓN 1. Si el usuario ya ingresÃ³ el operando "A" este se reemplazarÃ¡ por el número cargado
     if(flag1)
     {
         printf("1.Ingresar primer operando (A=%d)\n\n",num1);
@@ -20,7 +20,7 @@ int mostrarMenu(int num1,int num2,int flag1,int flag2,int flag3)
         printf("1.Ingresar primer operando (A=x)\n\n");
     }
 
-    //OPCIÃ“N 2. Si el usuario ya ingresó el operando "B" este se reemplazará por el número cargado
+    //OPCIÓN 2. Si el usuario ya ingresó el operando "B" este se reemplazará por el número cargado
     if(flag2)
     {
         printf("2.Ingresar segundo operando (B=%d)\n\n",num2);
@@ -31,26 +31,26 @@ int mostrarMenu(int num1,int num2,int flag1,int flag2,int flag3)
 
     }
 
-    //OPCIÃ“N 3.
+    //OPCIÓN 3.
     printf("3.Calcular operaciones\n\n");
     mostrarSubmenu(num1,num2,flag3);
 
-    //OPCIÃ“N 4.
+    //OPCIÓN 4.
     printf("4.Informar resultados\n\n");
 
-    //OPCIÃ“N 5.
+    //OPCIÓN 5.
     printf("5.Salir\n\n");
 
     printf("#########################################\n\n");
 
-    opcion=getInt("Elija una opcion:","Reingrese opcion:");
+    opcion=getInt("Elija una opcion:","Reingrese opcion elegida:");
 
     return opcion;
 }
 
 void mostrarSubmenu(int num1,int num2,int flag)//FunciÃ³n auxiliar a mostrarMenÃº
 {
-    if(flag)//los valores actuales de A y B se muestran cargados si el usuario eligiÃ³ calcular las operaciones
+    if(flag)//los valores actuales de A y B se muestran cargados si el usuario eligió calcular las operaciones
     {
         printf("a)Calcular la suma (%d + %d)\n",num1,num2);
         printf("b)Calcular la resta (%d - %d)\n",num1,num2);
@@ -74,7 +74,7 @@ void mostrarResultados(int num1,int num2,int suma,int resta,float division,int m
         printf("\n\na)El resultado de %d+%d es: %d\n",num1,num2,suma);
         //RESTA
         printf("b)El resultado de %d-%d es: %d\n",num1,num2,resta);
-        //IF DE LA DIVISION
+        //IF DE LA DIVISIÓN
         if(num2==0)
         {
             printf("c)No se puede dividir por 0\n");
@@ -82,10 +82,10 @@ void mostrarResultados(int num1,int num2,int suma,int resta,float division,int m
         {
             printf("c)El resultado de %d/%d es: %.2f\n",num1,num2,division);
         }
-        //MULTIPLICACIÃ“N
+        //MULTIPLICACIÓN
         printf("d)El resultado de %d*%d es: %d\n",num1,num2,multiplicacion);
         //FACTORIALES
-        printf("e)El resultado del factorial de %d es %llu y el resultado del \nfactorial de %d es %llu\n\n",num1,factorialA,num2,factorialB);
+        printf("e)El resultado del factorial de %d es %lld y el resultado del \nfactorial de %d es %lld\n\n",num1,factorialA,num2,factorialB);
         if(factorialA==0||factorialB==0)
 
         {
@@ -101,9 +101,10 @@ int getInt(char mensaje[],char mensajeError[])
     puts(mensaje);
     scanf("%s",numero);
 
-    while(validarNumeros(numero)==0)//si la funcion validarNumeros devolvio 0 hubo un error
+    while(validarNumeros(numero)==0)//si la función validarNumeros devolvió 0 hubo un error
     {
         puts(mensajeError);
+        fflush(stdin);
         scanf("%s",numero);
     }
 
@@ -123,10 +124,9 @@ int validarNumeros(char cadena[])
             retorno=0;
             break;
         }
-        /*la condicion !='-' en el if permite al usuario ingresar numeros negativos,
-        si solo se ingresa '-' será tomado como un 0*/
-
     }
+    /*la condición (cadena[i]!='-') en el if permite al usuario ingresar numeros
+        negativos. Si solo se ingresa '-' será tomado como un 0*/
 
     return retorno;
 }
@@ -135,7 +135,7 @@ void mostrarMensaje(char mensaje[])
 {
     puts(mensaje);
     system("pause");
-    //system("pause") le permitirÃ¡ al usuario leer el mensaje hasta que pulse una tecla
+    //system("pause") le permitirá al usuario leer el mensaje hasta que pulse una tecla
 }
 
 

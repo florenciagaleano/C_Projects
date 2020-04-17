@@ -1,10 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>//agrego esta biblioteca para usar tolower()
+#include <ctype.h>//esta biblioteca permite el uso de tolower()
 #include "funcionesCalculadora.h"
 #include "operaciones.h"
-
-//LO UNICO QUE FALTARIA ES VALIDAR LOS NUMEROS
 
 int main()
 {
@@ -19,7 +17,7 @@ int main()
     int multiplicacion;
     long long int factorialA;
     long long int factorialB;
-    char respuesta='n';
+    char respuesta='n';//si la respuesta es diferente a 'n' se rompe el while
 
 
     do
@@ -29,13 +27,15 @@ int main()
         switch(mostrarMenu(a,b,flagA,flagB,flagOpcion3))//switch de la opción elegida
         {
             case 1:
-                a=getInt("Ingrese primer operando: ","ERROR\nIngrese un numero:");
+                a=getInt("\nIngrese primer operando: ","\nERROR\nIngrese un numero:");
                 flagA=1;
                 break;
+
             case 2:
-                b=getInt("Ingrese segundo operando:","ERROR\nIngrese un numero:");
+                b=getInt("\nIngrese segundo operando:","\nERROR\nIngrese un numero:");
                 flagB=1;
                 break;
+
             case 3:
                 if(flagA&&flagB)
                 {
@@ -46,7 +46,7 @@ int main()
                     factorialA=calcularFactorial(a);
                     factorialB=calcularFactorial(b);
 
-                    mostrarMensaje("\n\n***LAS OPERACIONES YA FUERON CALCULADAS***\n\n");
+                    mostrarMensaje("\n***LAS OPERACIONES YA FUERON CALCULADAS***\n\n");
                     flagOpcion3=1;
                 }
                 else
@@ -55,6 +55,7 @@ int main()
                 }
 
                 break;
+
             case 4:
                 if(flagOpcion3)
                 {
@@ -63,7 +64,7 @@ int main()
                     flagB=0;
                     flagOpcion3=0;/*reinicializo las variables si el usuario ya vio los resultados
                                         por si quiere realizar otras operaciones*/
-                    system("pause");//system ("pause") para que el usuario pueda ver los resultado hasta que decida pulsar una tecla
+                    system("pause");//system ("pause") para que el usuario pueda ver los resultados hasta que decida pulsar una tecla
                 }
                 else
                 {
@@ -71,12 +72,14 @@ int main()
                 }
 
                 break;
+
             case 5:
                 printf("Esta seguro de que desea salir? s/n\n");
                 fflush(stdin);
                 scanf("%c",&respuesta);
                 respuesta=tolower(respuesta);
                 break;
+
             default:
                 mostrarMensaje("Opcion no valida\n\n");
                 break;
