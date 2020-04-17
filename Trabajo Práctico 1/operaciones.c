@@ -2,7 +2,7 @@
 
 int sumar(int a,int b)
 {
-    float suma;
+    int suma;
     suma=a+b;
     return suma;
 }
@@ -35,9 +35,9 @@ float dividir(int a,int b)
     return division;
 }
 
-long long int calcularFactorial(int numero)
+unsigned long long calcularFactorial(int numero)
 {
-    long long int factorial=0;
+    unsigned long long factorial=0;
 
     if(numero>=0)
     {
@@ -55,4 +55,5 @@ long long int calcularFactorial(int numero)
     return factorial;
 
 }
+
 

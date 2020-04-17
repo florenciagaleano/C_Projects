@@ -41,20 +41,28 @@ void mostrarResultados(int num1,int num2,int suma,int resta,float division,int m
 
 
 
-/** \brief Pide un numero y lo retorna
+/** \brief Pide un numero, lo valida y lo retorna
  *
  * \param mensaje El mensaje a mostrar
- * \return el número ingresado
+ * \param mensajeError El mensaje a mostrar si no se ingresó un numero
+ * \return el número ingresado validado
  *
  */
-int getInt(char mensaje[]);
+int getInt(char mensaje[],char mensajeError[]);
+
+/** \brief Valida que se hayan ingresado numeros
+ *
+ * \param cadena a validar
+ * \return 1 si se ingresaron solo numeros, 0 si se ingreso otra cosa
+ *
+ */
+int validarNumeros(char cadena[]);
 
  /** \brief Muestra un mensaje y pausa la pantalla
  *
  * \param mensaje Mensaje a mostrar
  *
  */
-
 void mostrarMensaje(char mensaje[]);
 
 

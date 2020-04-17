@@ -43,7 +43,8 @@ float dividir(int a,int b);
  * \return 0 si se ingresó un número negativo, sino el resultado del factorial
  *
  */
-long long int calcularFactorial(int numero);
+unsigned long long calcularFactorial(int numero);
+//ACLARACION: los resultados de los factoriales son correctos hasta el 20
 
 
 #endif // OPERACIONES_H_INCLUDED

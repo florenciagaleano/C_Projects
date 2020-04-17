@@ -29,11 +29,11 @@ int main()
         switch(mostrarMenu(a,b,flagA,flagB,flagOpcion3))//switch de la opción elegida
         {
             case 1:
-                a=getInt("Ingresse primer operando: ");
+                a=getInt("Ingrese primer operando: ","ERROR\nIngrese un numero:");
                 flagA=1;
                 break;
             case 2:
-                b=getInt("Ingrese segundo operando:");
+                b=getInt("Ingrese segundo operando:","ERROR\nIngrese un numero:");
                 flagB=1;
                 break;
             case 3:

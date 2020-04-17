@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>//esta libreria permite el uso de la funcion atoi()
+#include <string.h>//esta libreria permite el uso de la funcion strlen para validar numeros
 #include "funcionesCalculadora.h"
 
 int mostrarMenu(int num1,int num2,int flag1,int flag2,int flag3)
@@ -41,7 +43,7 @@ int mostrarMenu(int num1,int num2,int flag1,int flag2,int flag3)
 
     printf("#########################################\n\n");
 
-    opcion=getInt("Elija una opcion:");
+    opcion=getInt("Elija una opcion:","Reingrese opcion:");
 
     return opcion;
 }
@@ -65,6 +67,7 @@ void mostrarSubmenu(int num1,int num2,int flag)//Función auxiliar a mostrarMenú
         printf("e)Calcular el factorial (A! y B!)\n\n");
     }
 }
+
 void mostrarResultados(int num1,int num2,int suma,int resta,float division,int multiplicacion,long long int factorialA,long long int factorialB)
 {
         //SUMA
@@ -82,21 +85,50 @@ void mostrarResultados(int num1,int num2,int suma,int resta,float division,int m
         //MULTIPLICACIÓN
         printf("d)El resultado de %d*%d es: %d\n",num1,num2,multiplicacion);
         //FACTORIALES
-        printf("e)El resultado del factorial de %d es %lld y el resultado del \nfactorial de %d es %lld\n\n",num1,factorialA,num2,factorialB);
+        printf("e)El resultado del factorial de %d es %llu y el resultado del \nfactorial de %d es %llu\n\n",num1,factorialA,num2,factorialB);
         if(factorialA==0||factorialB==0)
+
         {
             printf("***ACLARACION***\nEl factorial que dio 0 no se pudo calcular porque no se\npuede calcular el factorial de numeros negativos\n\n");
         }
 }
 
-int getInt(char mensaje[])
+int getInt(char mensaje[],char mensajeError[])
 {
-    int numero;
+    char numero[5];
+    int numeroValidado;
 
     puts(mensaje);
-    scanf("%d",&numero);
+    scanf("%s",numero);
 
-    return numero;
+    while(validarNumeros(numero)==0)//si la funcion validarNumeros devolvio 0 hubo un error
+    {
+        puts(mensajeError);
+        scanf("%s",numero);
+    }
+
+    numeroValidado=atoi(numero);
+
+    return numeroValidado;
+}
+
+int validarNumeros(char cadena[])
+{
+    int retorno=1;
+
+    for(int i=0;i<strlen(cadena);i++)
+    {
+        if((cadena[i]<'0'||cadena[i]>'9')&&cadena[i]!='-')
+        {
+            retorno=0;
+            break;
+        }
+        /*la condicion !='-' en el if permite al usuario ingresar numeros negativos,
+        si solo se ingresa '-' será tomado como un 0*/
+
+    }
+
+    return retorno;
 }
 
 void mostrarMensaje(char mensaje[])
