@@ -48,7 +48,7 @@ int mostrarMenu(int num1,int num2,int flag1,int flag2,int flag3)
     return opcion;
 }
 
-void mostrarSubmenu(int num1,int num2,int flag)//FunciÃ³n auxiliar a mostrarMenÃº
+void mostrarSubmenu(int num1,int num2,int flag)//Función auxiliar a mostrarMenú
 {
     if(flag)//los valores actuales de A y B se muestran cargados si el usuario eligió calcular las operaciones
     {
@@ -95,7 +95,7 @@ void mostrarResultados(int num1,int num2,int suma,int resta,float division,int m
 
 int getInt(char mensaje[],char mensajeError[])
 {
-    char numero[64];
+    char numero[10];//se pueden poner numeros de hasta 9 digitos
     int numeroValidado;
 
     puts(mensaje);
@@ -119,7 +119,7 @@ int validarNumeros(char cadena[])
 
     for(int i=0;i<strlen(cadena);i++)
     {
-        if((cadena[i]<'0'||cadena[i]>'9')&&cadena[i]!='-')
+        if((cadena[i]<'0'||cadena[i]>'9')&&cadena[0]!='-')
         {
             retorno=0;
             break;

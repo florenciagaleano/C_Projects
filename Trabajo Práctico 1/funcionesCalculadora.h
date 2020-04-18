@@ -45,7 +45,7 @@ void mostrarResultados(int num1,int num2,int suma,int resta,float division,int m
  *
  * \param mensaje El mensaje a mostrar
  * \param mensajeError El mensaje a mostrar si no se ingresó un numero
- * \return el número ingresado validado
+ * \return el número ingresado
  *
  */
 int getInt(char mensaje[],char mensajeError[]);
