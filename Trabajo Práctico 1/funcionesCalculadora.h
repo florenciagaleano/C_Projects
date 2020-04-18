@@ -23,7 +23,7 @@ int mostrarMenu(int num1,int num2,int flag1,int flag2,int flag3);
  * \param flag Flag de la opción 3
  *
  */
-void mostrarSubmenu(int num1,int num2,int flag);//función auxiliar a mostrarMenu
+void mostrarOperaciones(int num1,int num2,int flag);//función auxiliar a mostrarMenu
 
 /** \brief muestra los resultados de las operaciones
  *
@@ -34,29 +34,18 @@ void mostrarSubmenu(int num1,int num2,int flag);//función auxiliar a mostrarMenu
  * \param division Resultado de la division
  * \param multiplicación Resultado de la multiplicación
  * \param factorialA Resultado del cálculo del factorial de num1
- * \param FactorialB Resultado del cálculo del factorial de num2
+ * \param factorialB Resultado del cálculo del factorial de num2
  *
  */
 void mostrarResultados(int num1,int num2,int suma,int resta,float division,int multiplicacion,long long int factorialA,long long int factorialB);
 
-
-
-/** \brief Pide un numero, lo valida y lo retorna
+/** \brief Pide un numero y lo retorna
  *
  * \param mensaje El mensaje a mostrar
- * \param mensajeError El mensaje a mostrar si no se ingresó un numero
  * \return el número ingresado
  *
  */
-int getInt(char mensaje[],char mensajeError[]);
-
-/** \brief Valida que se hayan ingresado numeros
- *
- * \param cadena a validar
- * \return 1 si se ingresaron solo numeros, 0 si se ingreso otra cosa
- *
- */
-int validarNumeros(char cadena[]);
+int getInt(char mensaje[]);
 
  /** \brief Muestra un mensaje y pausa la pantalla
  *

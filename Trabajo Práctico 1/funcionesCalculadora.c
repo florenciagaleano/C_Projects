@@ -1,7 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>//esta libreria permite el uso de la funcion atoi()
-#include <string.h>//esta libreria permite el uso de la funcion strlen para validar numeros
 #include "funcionesCalculadora.h"
 
 int mostrarMenu(int num1,int num2,int flag1,int flag2,int flag3)
@@ -10,7 +8,7 @@ int mostrarMenu(int num1,int num2,int flag1,int flag2,int flag3)
 
     printf("     <<<<< M E N U >>>>>\n\n\n");
 
-    //OPCIÓN 1. Si el usuario ya ingresÃ³ el operando "A" este se reemplazarÃ¡ por el número cargado
+    //OPCIÓN 1. Si el usuario ya ingresó el operando "A" este se reemplazará por el número cargado
     if(flag1)
     {
         printf("1.Ingresar primer operando (A=%d)\n\n",num1);
@@ -33,7 +31,7 @@ int mostrarMenu(int num1,int num2,int flag1,int flag2,int flag3)
 
     //OPCIÓN 3.
     printf("3.Calcular operaciones\n\n");
-    mostrarSubmenu(num1,num2,flag3);
+    mostrarOperaciones(num1,num2,flag3);
 
     //OPCIÓN 4.
     printf("4.Informar resultados\n\n");
@@ -43,12 +41,12 @@ int mostrarMenu(int num1,int num2,int flag1,int flag2,int flag3)
 
     printf("#########################################\n\n");
 
-    opcion=getInt("Elija una opcion:","Reingrese opcion elegida:");
+    opcion=getInt("Elija una opcion:");
 
     return opcion;
 }
 
-void mostrarSubmenu(int num1,int num2,int flag)//Función auxiliar a mostrarMenú
+void mostrarOperaciones(int num1,int num2,int flag)//Función auxiliar a mostrarMenú
 {
     if(flag)//los valores actuales de A y B se muestran cargados si el usuario eligió calcular las operaciones
     {
@@ -93,42 +91,14 @@ void mostrarResultados(int num1,int num2,int suma,int resta,float division,int m
         }
 }
 
-int getInt(char mensaje[],char mensajeError[])
+int getInt(char mensaje[])
 {
-    char numero[10];//se pueden poner numeros de hasta 9 digitos
-    int numeroValidado;
+    int numero;
 
     puts(mensaje);
-    scanf("%s",numero);
+    scanf("%d",&numero);
 
-    while(validarNumeros(numero)==0)//si la función validarNumeros devolvió 0 hubo un error
-    {
-        puts(mensajeError);
-        fflush(stdin);
-        scanf("%s",numero);
-    }
-
-    numeroValidado=atoi(numero);
-
-    return numeroValidado;
-}
-
-int validarNumeros(char cadena[])
-{
-    int retorno=1;
-
-    for(int i=0;i<strlen(cadena);i++)
-    {
-        if((cadena[i]<'0'||cadena[i]>'9')&&cadena[0]!='-')
-        {
-            retorno=0;
-            break;
-        }
-    }
-    /*la condición (cadena[i]!='-') en el if permite al usuario ingresar numeros
-        negativos. Si solo se ingresa '-' será tomado como un 0*/
-
-    return retorno;
+    return numero;
 }
 
 void mostrarMensaje(char mensaje[])

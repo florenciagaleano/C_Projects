@@ -37,7 +37,7 @@ float dividir(int a,int b)
 
 long long int calcularFactorial(int numero)
 {
-    long long int factorial=0;
+    long long int factorial=0;//si el numero es menor a 0 no entra en el if y devuelve directamente 0
 
     if(numero>=0)
     {
