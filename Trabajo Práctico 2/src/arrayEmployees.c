@@ -219,18 +219,25 @@ void report(eEmployee vec[],int len)
 
 int printEmployees(eEmployee* vec, int len)
 {
-    system("cls");
-    printf("           ***LIST OF EMPLOYEES***\n\n");
-    printf("  ID         Name     Last name    Salary    Sector\n");
-    for(int i=0;i<len;i++)
+    int returnValue=-1;
+    
+    if(len>0&&vec!=NULL)
     {
-        if(vec[i].isEmpty==0)
+        system("cls");
+        printf("           ***LIST OF EMPLOYEES***\n\n");
+        printf("  ID         Name     Last name    Salary    Sector\n");
+        for(int i=0;i<len;i++)
         {
-            showEmployee(vec[i]);
+            if(vec[i].isEmpty==0)
+            {
+                showEmployee(vec[i]);
+            }
         }
+        
+        returnValue=0;
     }
 
-    return 0;
+    return returnValue;
 }
 
 void showEmployee(eEmployee employee)
