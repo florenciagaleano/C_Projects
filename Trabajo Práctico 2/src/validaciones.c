@@ -196,15 +196,3 @@ int getIntTwoOptions(char message[],char errorMessage[],int option1,int option2)
     return number;
 
 }
-
-void pause()
-{
-
-	char tmp;
-
-	do{
-		tmp = getchar();
-	} while( tmp != '\n' && tmp != EOF);
-
-	return;
-}
