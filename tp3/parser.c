@@ -64,7 +64,7 @@ int parser_EmployeeFromBinary(FILE* pFile , LinkedList* pArrayListEmployee)
         {
             newEmployee=employee_new();
 
-            if(newEmployee!=NULL)//salio todo bien y se pudo cargar al empleado
+            if(newEmployee!=NULL)//salio todo bien y se pudo hacer un nuevo empleado
             {
                 if(fread(newEmployee,sizeof(Employee),1,pFile))//si la funcion no retorna 0
                 {

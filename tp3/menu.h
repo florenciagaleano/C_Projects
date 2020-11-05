@@ -10,5 +10,17 @@
  *
  */
 int menu();
+
+/** \brief muestra opciones de modificaciones y le pide al usuario que elija una
+ *
+ * \return char La opcion elegida
+ *
+ */
 char submenuModificar();
+
+/** \brief muestra un menu de opciones con respecto al orden y le pide al usuario que elija una
+ *
+ * \return char La opcion elegida
+ *
+ */
 char submenuOrdenar();

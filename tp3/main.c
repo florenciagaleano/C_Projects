@@ -25,73 +25,121 @@ int main()
     /*ACORDARME DE BORRAR LO DE PROXID CUANDO LO ENTREGUE*/
 
     int option=0;
+    int flagTxt=0;
+    int flagBin=0;
+    int flagAdd=0;
     LinkedList* listaEmpleados = ll_newLinkedList();
+
     do{
         option=menu();
 
         switch(option)
         {
             case 1:
-                if(!controller_loadFromText("data.csv",listaEmpleados))
+                if(flagBin||flagTxt)//si ya se cargaron desde un archivo
                 {
-                    printf("\nEmpleados cargados exitosamente!\n\n");
+                    printf("\nLos empleados ya fueron cargados\n\n");
                 }else
                 {
-                    printf("\nProblemas para cargar los empleados\n\n");
+                    if(!controller_loadFromText("data.csv",listaEmpleados))
+                    {
+                        printf("\nEmpleados cargados exitosamente!\n\n");
+                        flagTxt=1;
+                    }else
+                    {
+                        printf("\nProblemas para cargar los empleados\n\n");
+                    }
                 }
                 break;
             case 2:
-                if(!controller_loadFromBinary("data.bin",listaEmpleados))
+                if(flagTxt||flagBin)//si ya se cargaron desde un archivo
                 {
-                    printf("\nEmpleados cargados exitosamente!\n\n");
-                    //imprimirEmpleados(listaEmpleados);
+                    printf("\nLos empleados ya fueron cargados\n\n");
                 }else
                 {
-                    printf("\nProblemas para cargar los empleados\n\n");
+                    if(!controller_loadFromBinary("data.bin",listaEmpleados))
+                    {
+                        printf("\nEmpleados cargados exitosamente!\n\n");
+                        flagBin=1;
+                    }else
+                    {
+                        printf("\nProblemas para cargar los empleados\n\n");
+                    }
                 }
                 break;
             case 3:
                 if(!controller_addEmployee(listaEmpleados))
                 {
                     printf("\nAlta exitosa!!!\n\n");
+                    flagAdd=1;
                 }else
                 {
                     printf("\nProblemas para dar de alta\n\n");
                 }
                 break;
             case 4:
-                switch(controller_editEmployee(listaEmpleados))
+                if(flagAdd||flagBin||flagTxt)
                 {
-                case -1:
-                    printf("\nProblemas para modificar\n\n");
-                    break;
-                case 0:
-                    printf("\nModificacion exitosa!\n\n");
-                    break;
-                case 1:
-                    printf("\nOperacion cancelada\n\n");
-                    break;
+                    switch(controller_editEmployee(listaEmpleados))
+                    {
+                    case -1:
+                        printf("\nProblemas para modificar\n\n");//algun parametro es null o el id no existe
+                        break;
+                    case 0:
+                        printf("\nModificacion exitosa!\n\n");
+                        break;
+                    case 1:
+                        printf("\nOperacion cancelada\n\n");
+                        break;
+                    }
+                }else
+                {
+                    printf("\nPrimero debe cargar un empleado\n\n");
                 }
                 break;
             case 5:
-                switch(controller_removeEmployee(listaEmpleados))
+                if(flagAdd||flagBin||flagTxt)
                 {
-                case -1:
-                    printf("\nProblemas para dar de baja\n\n");
-                    break;
-                case 0:
-                    printf("\nBaja exitosa!\n\n");
-                    break;
-                case 1:
-                    printf("\nOperacion cancelada\n\n");
-                    break;
+                    switch(controller_removeEmployee(listaEmpleados))
+                    {
+                    case -1:
+                        printf("\nProblemas para dar de baja\n\n");//algun parametro es null o el id no existe
+                        break;
+                    case 0:
+                        printf("\nBaja exitosa!\n\n");
+                        break;
+                    case 1:
+                        printf("\nOperacion cancelada\n\n");
+                        break;
+                    }
+                }else
+                {
+                    printf("\nPrimero debe cargar un empleado\n\n");
                 }
                 break;
             case 6:
-                controller_ListEmployee(listaEmpleados);
+                if(flagAdd||flagBin||flagTxt)
+                {
+                    controller_ListEmployee(listaEmpleados);
+                }else
+                {
+                    printf("\nPrimero debe cargar un empleado\n\n");
+                }
                 break;
             case 7:
-                controller_sortEmployee(listaEmpleados);
+                if(flagAdd||flagBin||flagTxt)
+                {
+                    if(!controller_sortEmployee(listaEmpleados))
+                    {
+                        printf("\nEmpleados ordenados!\n\n");
+                    }else
+                    {
+                        printf("\nProblemas para ordenar a los empleados\n\n");
+                    }
+                }else
+                {
+                    printf("\nPrimero debe cargar un empleado\n\n");
+                }
                 break;
             case 8:
                 if(!controller_saveAsText("data.csv",listaEmpleados))
@@ -111,9 +159,14 @@ int main()
                     printf("\nNo se pudieron cagar los empleados\n\n");
                 }
                 break;
+            case 10:
+                break;//porque es la opcion para salir
+            default:
+                printf("\nOpcion no valida\n\n");
+                break;
         }
 
-        system("pause");
+        system("pause");//pauso la pantalla
 
     }while(option != 10);
 

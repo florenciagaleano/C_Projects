@@ -7,6 +7,12 @@
 #include "menu.h"
 
 
+/** \brief Obtiene el id a cargar a un empleado y lo carga a un puntero
+ *
+ * \param id int*
+ * \return int -1 si el archivo deproxId no existe y sino 0
+ *
+ */
 static int obtenerId(int* id)
 {
     int retorno=-1;
@@ -28,6 +34,12 @@ static int obtenerId(int* id)
     return retorno;
 }
 
+/** \brief actualiza el id y carga lo que sera el proximo id en un archivo binario
+ *
+ * \param id int Id actual para saber cual sera el proximo
+ * \return int 0 si salio todo bien y sino -1
+ *
+ */
 static int actualizarId(int id)
 {
     int retorno=-1;
@@ -35,7 +47,7 @@ static int actualizarId(int id)
 
     id++;
 
-    f=fopen("proxId.bin","wb");
+    f=fopen("proxId.bin","wb");//despues del 1er alta se va a crear este archivo
     if(f!=NULL)
     {
         fwrite(&id,sizeof(int),1,f);
@@ -129,8 +141,8 @@ int controller_addEmployee(LinkedList* pArrayListEmployee)
         if(newEmployee!=NULL)
         {
             getString(auxNombre,sizeof(auxNombre),"Ingrese nombre del empleado:","Ingrese nombre valido:");
-            getInt(&auxHoras,"Ingrese la cantidad de horas trabajadas:","Ingrese cantidad de horas valida:");
-            getInt(&auxSueldo,"Ingrese sueldo del empleado:","Ingrese sueldo valido:");
+            getInt(&auxHoras,"\nIngrese la cantidad de horas trabajadas:","Ingrese cantidad de horas valida:");
+            getInt(&auxSueldo,"\nnIngrese sueldo del empleado:","Ingrese sueldo valido:");
             obtenerId(&auxId);//la 1era vez le va a cargar 1001
             actualizarId(auxId);
 
@@ -167,6 +179,9 @@ int controller_editEmployee(LinkedList* pArrayListEmployee)
 
     if(pArrayListEmployee!=NULL)
     {
+        system("cls");
+        printf("   ***MODIFICACIONES***\n\n");
+
         getInt(&auxId,"Ingrese el id del empleado a modificar:","Ingrese id valido:");
         indice=findEmployeeById(pArrayListEmployee,auxId);
         if(indice!=-1)//compruebo que el empleado exista
@@ -288,7 +303,7 @@ int controller_ListEmployee(LinkedList* pArrayListEmployee)
             auxE=(Employee*) ll_get(pArrayListEmployee,i);
             if(auxE!=NULL)
             {
-                mostrarEmpleado(auxE);
+                mostrarEmpleado(auxE);//esta funcion esta en la biblioteca Employee
                 flag=1;
             }
         }
@@ -327,6 +342,8 @@ int controller_sortEmployee(LinkedList* pArrayListEmployee)
             getInt(&orden,"Ingrese 1 o 0:","Ingrese 1 o 0:");
         }//valido que se haya ingresado 0 o 1
 
+        printf("\nOrdenando...\n");//hago este printf porque tardan en ordenarse
+
         switch(opcion)
         {
         case 'a':
@@ -345,6 +362,8 @@ int controller_sortEmployee(LinkedList* pArrayListEmployee)
             printf("Opcion no valida\n");
             break;
         }
+
+        retorno=0;
     }
 
     return retorno;

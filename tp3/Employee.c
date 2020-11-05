@@ -18,7 +18,7 @@ Employee* employee_newParametros(char* idStr,char* nombreStr,char* horasTrabajad
         if(employee_setHorasTrabajadas(newEmployee,atoi(horasTrabajadasStr))==-1||
            employee_setId(newEmployee,atoi(idStr))==-1||
            employee_setNombre(newEmployee,nombreStr)==-1||
-           employee_setSueldo(newEmployee,atoi(sueldoStr))==-1)
+           employee_setSueldo(newEmployee,atoi(sueldoStr))==-1)//si lagun setter falla
         {
             employee_delete(newEmployee);
         }
@@ -179,7 +179,7 @@ int mostrarEmpleado(Employee* empleado)
            !employee_getHorasTrabajadas(empleado,&auxHoras)&&
            !employee_getSueldo(empleado,&auxSueldo))//salio todo ok
         {
-            printf(" %03d %10s  %03d   %d\n",auxId,auxNombre,auxHoras,auxSueldo);
+            printf("%03d %10s  %-3d   %d\n",auxId,auxNombre,auxHoras,auxSueldo);
             retorno=0;
         }
     }
@@ -200,13 +200,13 @@ int compararPorId(void* emp1,void* emp2)
 
     if(auxIdA>auxIdB)
     {
-        retorno=-1;
+        retorno=1;
     }else if(auxIdA==auxIdB)
     {
         retorno=0;
     }else
     {
-        retorno=1;
+        retorno=-1;
     }
 
     return retorno;
@@ -225,13 +225,13 @@ int compararPorNombre(void* emp1,void* emp2)
 
     if(stricmp(bufferA,bufferB)==1)
     {
-        retorno=-1;
+        retorno=1;
     }else if(stricmp(bufferA,bufferB)==0)
     {
         retorno=0;
     }else
     {
-        retorno=1;
+        retorno=-1;
     }
 
     return retorno;
@@ -245,18 +245,18 @@ int compararPorHoras(void* emp1,void* emp2)
     int auxHorasA;
     int auxHorasB;
 
-    employee_getId(a,&auxHorasA);
-    employee_getId(b,&auxHorasB);
+    employee_getHorasTrabajadas(a,&auxHorasA);
+    employee_getHorasTrabajadas(b,&auxHorasB);
 
     if(auxHorasA>auxHorasB)
     {
-        retorno=-1;
+        retorno=1;
     }else if(auxHorasA==auxHorasB)
     {
         retorno=0;
     }else
     {
-        retorno=1;
+        retorno=-1;
     }
 
     return retorno;
@@ -270,18 +270,18 @@ int compararPorSueldos(void* emp1,void* emp2)
     int auxHorasA;
     int auxHorasB;
 
-    employee_getHorasTrabajadas(a,&auxHorasA);
-    employee_getHorasTrabajadas(b,&auxHorasB);
+    employee_getSueldo(a,&auxHorasA);
+    employee_getSueldo(b,&auxHorasB);
 
     if(auxHorasA>auxHorasB)
     {
-        retorno=-1;
+        retorno=1;
     }else if(auxHorasA==auxHorasB)
     {
         retorno=0;
     }else
     {
-        retorno=1;
+        retorno=-1;
     }
 
     return retorno;
