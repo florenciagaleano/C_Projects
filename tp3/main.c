@@ -153,16 +153,22 @@ int main()
                     }
                 }else
                 {
-                    printf("\nNo hay empleados para cargar\n\n");
+                    printf("\nNo hay empleados para guardar\n\n");
                 }
                 break;
             case 9:
-                if(!controller_saveAsBinary("data.bin",listaEmpleados))
+                if(flagAdd||flagBin||flagTxt)
                 {
-                    printf("\nEmpleados guardados exitosamente\n\n");
+                    if(!controller_saveAsBinary("data.bin",listaEmpleados))
+                    {
+                        printf("\nEmpleados guardados exitosamente\n\n");
+                    }else
+                    {
+                        printf("\nNo se pudieron cagar los empleados\n\n");
+                    }
                 }else
                 {
-                    printf("\nNo se pudieron cagar los empleados\n\n");
+                    printf("\nNo hay empleados para guardar\n\n");
                 }
                 break;
             case 10:
