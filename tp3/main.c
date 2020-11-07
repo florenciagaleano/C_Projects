@@ -142,12 +142,18 @@ int main()
                 }
                 break;
             case 8:
-                if(!controller_saveAsText("data.csv",listaEmpleados))
+                if(flagAdd||flagBin||flagTxt)
                 {
-                    printf("\nEmpleados guardados exitosamente\n\n");
+                    if(!controller_saveAsText("data.csv",listaEmpleados))
+                    {
+                        printf("\nEmpleados guardados exitosamente\n\n");
+                    }else
+                    {
+                        printf("\nProblemas para guardar a los empleados\n\n");
+                    }
                 }else
                 {
-                    printf("\nProblemas para guardar a los empleados\n\n");
+                    printf("\nNo hay empleados para cargar\n\n");
                 }
                 break;
             case 9:

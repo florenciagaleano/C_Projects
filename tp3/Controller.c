@@ -10,7 +10,7 @@
 /** \brief Obtiene el id a cargar a un empleado y lo carga a un puntero
  *
  * \param id int*
- * \return int -1 si el archivo deproxId no existe y sino 0
+ * \return int -1 si el archivo de proxId no existe y sino 0
  *
  */
 static int obtenerId(int* id)
@@ -60,9 +60,9 @@ static int actualizarId(int id)
 
 /** \brief Carga los datos de los empleados desde el archivo data.csv (modo texto).
  *
- * \param path char*
- * \param pArrayListEmployee LinkedList*
- * \return int
+ * \param path char* Nombre del archivo del que se cargara info
+ * \param pArrayListEmployee LinkedList* Array de empleados
+ * \return int 0 si salio todo bien y sino -1
  *
  */
 int controller_loadFromText(char* path, LinkedList* pArrayListEmployee)
@@ -89,9 +89,9 @@ int controller_loadFromText(char* path, LinkedList* pArrayListEmployee)
 
 /** \brief Carga los datos de los empleados desde el archivo data.csv (modo binario).
  *
- * \param path char*
- * \param pArrayListEmployee LinkedList*
- * \return int
+ * \param path char* nombre del archivo del que se cargara la info
+ * \param pArrayListEmployee LinkedList* Array de empleados
+ * \return int 0 si salio todo bien y sino -1
  *
  */
 int controller_loadFromBinary(char* path, LinkedList* pArrayListEmployee)
@@ -118,14 +118,13 @@ int controller_loadFromBinary(char* path, LinkedList* pArrayListEmployee)
 
 /** \brief Alta de empleados
  *
- * \param path char*
- * \param pArrayListEmployee LinkedList*
- * \return int
+ * \param pArrayListEmployee LinkedList* Array de empleados
+ * \return int 0 si salio todo bien y sino -1
  *
  */
 int controller_addEmployee(LinkedList* pArrayListEmployee)
 {
-    int retorno=0;
+    int retorno=-1;
     Employee* newEmployee=NULL;
     int auxId;
     char auxNombre[128];
@@ -147,9 +146,9 @@ int controller_addEmployee(LinkedList* pArrayListEmployee)
             actualizarId(auxId);
 
             if(!employee_setId(newEmployee,auxId)&&
-                    !employee_setNombre(newEmployee,auxNombre)&&
-                    !employee_setHorasTrabajadas(newEmployee,auxHoras)&&
-                    !employee_setSueldo(newEmployee,auxSueldo))//me falta settear el id
+                !employee_setNombre(newEmployee,auxNombre)&&
+                !employee_setHorasTrabajadas(newEmployee,auxHoras)&&
+                !employee_setSueldo(newEmployee,auxSueldo))
             {
                 ll_add(pArrayListEmployee,newEmployee);//agrego al nuevo empleado a la lista
                 retorno=0;//todo salid ok
@@ -162,19 +161,18 @@ int controller_addEmployee(LinkedList* pArrayListEmployee)
 
 /** \brief Modificar datos de empleado
  *
- * \param path char*
- * \param pArrayListEmployee LinkedList*
- * \return int
+ * \param pArrayListEmployee LinkedList* Array de empleados
+ * \return int 0 si se modifico al empleado, 1 si se cancelo la operacion y -1 si hubo alguna falla
  *
  */
 int controller_editEmployee(LinkedList* pArrayListEmployee)
 {
     int retorno=-1;
-    char bufferNombre[128];
-    int bufferInt;
+    char bufferNombre[128];//por si tengo que cambiar el nombre
+    int bufferInt;//si tengo que cambiar horas o sueldo
     Employee* auxE;
     int auxId;
-    int indice;
+    int indice;//indice del empleado a editar
     char confirma;
 
     if(pArrayListEmployee!=NULL)
@@ -190,6 +188,7 @@ int controller_editEmployee(LinkedList* pArrayListEmployee)
             if(auxE!=NULL)
             {
                 printf("\n\n");
+                printf("ID      NOMBRE HORAS   SUELDO\n");
                 mostrarEmpleado(auxE);
                 getCharTwoOptions(&confirma,"\nEs este el empleado que desea modificar? (s/n)\n","Ingrese s o n:",'s','n');
                 if(confirma=='s')
@@ -236,16 +235,15 @@ int controller_editEmployee(LinkedList* pArrayListEmployee)
 
 /** \brief Baja de empleado
  *
- * \param path char*
- * \param pArrayListEmployee LinkedList*
- * \return int
+ * \param pArrayListEmployee LinkedList* Array de empleados
+ * \return int 0 si se dio de baja al empleado, 1 si se cancelo la operacion y -1 si hubo alguna falla
  *
  */
 int controller_removeEmployee(LinkedList* pArrayListEmployee)
 {
     int retorno=-1;
     int auxId;
-    int indice;
+    int indice;//indice donde esta el empleado a borrar
     char confirma;
     Employee* auxE;
 
@@ -260,6 +258,7 @@ int controller_removeEmployee(LinkedList* pArrayListEmployee)
         {
             auxE=ll_get(pArrayListEmployee,indice);
             printf("\n\n");
+            printf("ID      NOMBRE HORAS   SUELDO\n");
             mostrarEmpleado(auxE);
             getCharTwoOptions(&confirma,"\nEs este el empleado que desea modificar? (s/n)\n","Ingrese s o n:",'s','n');
             if(confirma=='s')
@@ -279,8 +278,7 @@ int controller_removeEmployee(LinkedList* pArrayListEmployee)
 
 /** \brief Listar empleados
  *
- * \param path char*
- * \param pArrayListEmployee LinkedList*
+ * \param pArrayListEmployee LinkedList* Array de empleados
  * \return int
  *
  */
@@ -321,8 +319,7 @@ int controller_ListEmployee(LinkedList* pArrayListEmployee)
 
 /** \brief Ordenar empleados
  *
- * \param path char*
- * \param pArrayListEmployee LinkedList*
+ * \param pArrayListEmployee LinkedList* Array de empleados
  * \return int
  *
  */
@@ -371,9 +368,9 @@ int controller_sortEmployee(LinkedList* pArrayListEmployee)
 
 /** \brief Guarda los datos de los empleados en el archivo data.csv (modo texto).
  *
- * \param path char*
- * \param pArrayListEmployee LinkedList*
- * \return int
+ * \param path char* Nombre del archivo en el que se escribira
+ * \param pArrayListEmployee LinkedList* Array de empleados
+ * \return int 0 si salio todo bien y sino -1
  *
  */
 int controller_saveAsText(char* path, LinkedList* pArrayListEmployee)
@@ -394,7 +391,7 @@ int controller_saveAsText(char* path, LinkedList* pArrayListEmployee)
         if(pFile!=NULL)
         {
             len=ll_len(pArrayListEmployee);
-            fprintf(pFile,"id,nombre,horasTrabajadas,sueldo\n");
+            fprintf(pFile,"id,nombre,horasTrabajadas,sueldo\n");//encabezado
             for(int i=0;i<len;i++)
             {
                 auxE=ll_get(pArrayListEmployee,i);
@@ -421,9 +418,9 @@ int controller_saveAsText(char* path, LinkedList* pArrayListEmployee)
 
 /** \brief Guarda los datos de los empleados en el archivo data.csv (modo binario).
  *
- * \param path char*
+ * \param path char* Nombre del archivo en el que se escribira
  * \param pArrayListEmployee LinkedList*
- * \return int
+ * \return int 0 si salio todo bien y sino -1
  *
  */
 int controller_saveAsBinary(char* path, LinkedList* pArrayListEmployee)
@@ -440,7 +437,7 @@ int controller_saveAsBinary(char* path, LinkedList* pArrayListEmployee)
         if(pFile!=NULL)
         {
             len=ll_len(pArrayListEmployee);
-            for(int i=0;i<len;i++)//empiezo desde 1 por el encabezado
+            for(int i=0;i<len;i++)
             {
                 auxE=ll_get(pArrayListEmployee,i);
                 if(auxE!=NULL)//el empleado existe

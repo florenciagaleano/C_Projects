@@ -19,8 +19,7 @@ int parser_EmployeeFromText(FILE* pFile , LinkedList* pArrayListEmployee)
 
     if(pFile!=NULL&&pArrayListEmployee!=NULL)
     {
-        fscanf(pFile,"%[^,],%[^,],%[^,],%[^\n]\n",buffer[0],buffer[1],buffer[2],buffer[3]);//ecabezado
-        //printf(" %s %8s %5s %6s\n\n",buffer[0],buffer[1],buffer[2],buffer[3]);//muestro el encabezado
+        fscanf(pFile,"%[^,],%[^,],%[^,],%[^\n]\n",buffer[0],buffer[1],buffer[2],buffer[3]);//encabezado
 
         while(!feof(pFile))
         {

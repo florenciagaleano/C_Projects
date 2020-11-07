@@ -104,7 +104,7 @@ int employee_getNombre(Employee* this,char* nombre)
 {
     int retorno=-1;
 
-    if(this!=NULL&&nombre!=NULL)
+    if(this!=NULL&&nombre!=NULL)//no existen nombres de 2 letras
     {
         strcpy(nombre,this->nombre);
         retorno=0;
@@ -208,6 +208,7 @@ int compararPorId(void* emp1,void* emp2)
     {
         retorno=-1;
     }
+    //auxIdA-auxIdB
 
     return retorno;
 }
@@ -223,16 +224,7 @@ int compararPorNombre(void* emp1,void* emp2)
     employee_getNombre(a,bufferA);
     employee_getNombre(b,bufferB);
 
-    if(stricmp(bufferA,bufferB)==1)
-    {
-        retorno=1;
-    }else if(stricmp(bufferA,bufferB)==0)
-    {
-        retorno=0;
-    }else
-    {
-        retorno=-1;
-    }
+    retorno=stricmp(bufferA,bufferB);
 
     return retorno;
 }
