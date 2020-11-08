@@ -164,7 +164,7 @@ int main()
                         printf("\nEmpleados guardados exitosamente\n\n");
                     }else
                     {
-                        printf("\nNo se pudieron cagar los empleados\n\n");
+                        printf("\nProblemas para guardar a los empleados\n\n");
                     }
                 }else
                 {

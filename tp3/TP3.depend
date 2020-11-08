@@ -124,7 +124,7 @@
 
 1604118321 c:\users\galeano\desktop\flor utn\tps lab 1\tp_laboratorio_1\tp3\validaciones.h
 
-1604550956 source:c:\users\galeano\desktop\flor utn\tps lab 1\tp_laboratorio_1\tp3\main.c
+1604757793 source:c:\users\galeano\desktop\flor utn\tps lab 1\tp_laboratorio_1\tp3\main.c
 	<stdio.h>
 	<stdlib.h>
 	"LinkedList.h"
@@ -156,7 +156,7 @@
 	<string.h>
 	<ctype.h>
 
-1604755934 source:c:\users\galeano\desktop\flor utn\tps lab 1\tp_laboratorio_1\tp3\controller.c
+1604757793 source:c:\users\galeano\desktop\flor utn\tps lab 1\tp_laboratorio_1\tp3\controller.c
 	<stdio.h>
 	<stdlib.h>
 	"LinkedList.h"

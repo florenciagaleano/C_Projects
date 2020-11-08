@@ -260,7 +260,7 @@ int controller_removeEmployee(LinkedList* pArrayListEmployee)
             printf("\n\n");
             printf("ID      NOMBRE HORAS   SUELDO\n");
             mostrarEmpleado(auxE);
-            getCharTwoOptions(&confirma,"\nEs este el empleado que desea modificar? (s/n)\n","Ingrese s o n:",'s','n');
+            getCharTwoOptions(&confirma,"\nEs este el empleado que desea dar de baja? (s/n)\n","Ingrese s o n:",'s','n');
             if(confirma=='s')
             {
                 ll_remove(pArrayListEmployee,indice);
