@@ -1,0 +1,65 @@
+# depslib dependency file v1.0
+1605977443 source:c:\users\galeano\desktop\flor utn\abmestudiantes\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1605920780 c:\users\galeano\desktop\flor utn\abmestudiantes\linkedlist.h
+
+1605977949 source:c:\users\galeano\desktop\flor utn\abmestudiantes\main.c
+	<stdio.h>
+	<stdlib.h>
+	"validaciones.h"
+	"controller.h"
+	"menu.h"
+	"estudiante.h"
+
+1605834928 source:c:\users\galeano\desktop\flor utn\abmestudiantes\validaciones.c
+	"validaciones.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
+1605834908 c:\users\galeano\desktop\flor utn\abmestudiantes\validaciones.h
+
+1606002980 source:c:\users\galeano\desktop\flor utn\abmestudiantes\estudiante.c
+	"estudiante.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1605936740 c:\users\galeano\desktop\flor utn\abmestudiantes\estudiante.h
+	"LinkedList.h"
+
+1606003156 source:c:\users\galeano\desktop\flor utn\abmestudiantes\controller.c
+	"controller.h"
+	<stdlib.h>
+	<stdio.h>
+	"parser.h"
+	"estudiante.h"
+	"validaciones.h"
+	"menu.h"
+
+1605847526 source:c:\users\galeano\desktop\flor utn\abmestudiantes\parser.c
+	"parser.h"
+	<stdlib.h>
+	"LinkedList.h"
+	"estudiante.h"
+
+1605847526 c:\users\galeano\desktop\flor utn\abmestudiantes\parser.h
+	"LinkedList.h"
+	<stdio.h>
+
+1605977443 c:\users\galeano\desktop\flor utn\abmestudiantes\controller.h
+	"LinkedList.h"
+
+1605977443 source:c:\users\galeano\desktop\flor utn\abmestudiantes\menu.c
+	<stdio.h>
+	<stdlib.h>
+	"validaciones.h"
+	"menu.h"
+
+1605935554 c:\users\galeano\desktop\flor utn\abmestudiantes\menu.h
+
