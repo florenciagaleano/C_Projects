@@ -166,21 +166,4 @@ int main()
     return 0;
 }
 
-int filtrarMujeres(void* estudiante)
-{
-    int retorno=0;
-    Student* auxS= (Student*) estudiante;
-    char auxSexo;
-
-    student_getSexo(auxS,&auxSexo);
-
-    if(auxSexo=='F')
-    {
-        retorno=1;
-    }
-
-
-    return retorno;
-}
-
 
