@@ -1,0 +1,94 @@
+# depslib dependency file v1.0
+1602875572 source:c:\users\galeano\desktop\parcial labo\galeano.florencia.pplab1\primer parcial 1\validaciones.c
+	"validaciones.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
+1602875463 c:\users\galeano\desktop\parcial labo\galeano.florencia.pplab1\primer parcial 1\validaciones.h
+
+1603495298 source:c:\users\galeano\desktop\parcial labo\galeano.florencia.pplab1\primer parcial 1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"validaciones.h"
+	"dataStore.h"
+	"tipo.h"
+	"color.h"
+	"mascota.h"
+	"servicio.h"
+	"trabajo.h"
+	"informes.h"
+
+1603493535 c:\users\galeano\desktop\parcial labo\galeano.florencia.pplab1\primer parcial 1\datastore.h
+
+1603494996 source:c:\users\galeano\desktop\parcial labo\galeano.florencia.pplab1\primer parcial 1\tipo.c
+	"tipo.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"validaciones.h"
+
+1603495397 c:\users\galeano\desktop\parcial labo\galeano.florencia.pplab1\primer parcial 1\tipo.h
+
+1603494472 source:c:\users\galeano\desktop\parcial labo\galeano.florencia.pplab1\primer parcial 1\color.c
+	"color.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"validaciones.h"
+
+1603494780 c:\users\galeano\desktop\parcial labo\galeano.florencia.pplab1\primer parcial 1\color.h
+
+1603496088 c:\users\galeano\desktop\parcial labo\galeano.florencia.pplab1\primer parcial 1\mascota.h
+	"color.h"
+	"tipo.h"
+
+1603496185 source:c:\users\galeano\desktop\parcial labo\galeano.florencia.pplab1\primer parcial 1\mascota.c
+	"mascota.h"
+	"validaciones.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1603496399 c:\users\galeano\desktop\parcial labo\galeano.florencia.pplab1\primer parcial 1\servicio.h
+
+1603496493 source:c:\users\galeano\desktop\parcial labo\galeano.florencia.pplab1\primer parcial 1\servicio.c
+	"servicio.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"validaciones.h"
+
+1603496760 source:c:\users\galeano\desktop\parcial labo\galeano.florencia.pplab1\primer parcial 1\trabajo.c
+	"trabajo.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"validaciones.h"
+
+1602890180 c:\users\galeano\desktop\parcial labo\galeano.florencia.pplab1\primer parcial 1\trabajo.h
+	"fecha.h"
+	"tipo.h"
+	"color.h"
+	"mascota.h"
+	"servicio.h"
+
+1602884670 c:\users\galeano\desktop\parcial labo\galeano.florencia.pplab1\primer parcial 1\fecha.h
+
+1603492313 c:\users\galeano\desktop\parcial labo\galeano.florencia.pplab1\primer parcial 1\informes.h
+	"fecha.h"
+	"tipo.h"
+	"color.h"
+	"mascota.h"
+	"servicio.h"
+	"trabajo.h"
+
+1603496829 source:c:\users\galeano\desktop\parcial labo\galeano.florencia.pplab1\primer parcial 1\informes.c
+	"informes.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"validaciones.h"
+
